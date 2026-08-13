@@ -32,6 +32,11 @@ The software suite, **"Анализ Дорог"**, processes video streams from 
 * **Performance:** 
   * `mAP@0.5`: **0.677**
   * `Inference Time`: **2.5 ms** (400 FPS on NVIDIA T4 via TensorRT)
+
+<div align="center">
+  <img width="800" alt="Рисунок2" src="https://github.com/user-attachments/assets/c927658a-fa6b-4470-b246-dc3c2884f25e" />
+</div>
+
 * **Loss Functions:** CIoU (Complete Intersection over Union) for bounding box regression and Focal Loss for handling class imbalance (especially for D40 Potholes).
 
 <div align="center">
