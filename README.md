@@ -19,6 +19,11 @@ The software suite, **"Анализ Дорог"**, processes video streams from 
 
 ## Key Features
 *  **High-Precision CV Pipeline:** Defect detection based on the international RDD standard (D00: Longitudinal, D10: Transverse, D20: Alligator, D40: Pothole).
+
+<div align="center">
+  <img width="600" alt="Рисунок1" src="https://github.com/user-attachments/assets/0c102cfb-d8a9-4367-8652-4f50af0d88f0" />
+</div>
+
 *  **GIS Integration & Gradient Mapping:** Defects are automatically tied to GPS coordinates. The system calculates a rolling "condition score" within a 25-meter radius and paints the road segments on a map from Green (Good) to Black (Critical).
 *  **Automated PDF Reporting:** Generates comprehensive analytical reports for municipal authorities, highlighting critical zones and defect density.
 *  **Human-in-the-loop Annotation:** The custom dataset was meticulously refined using a dual-operator review system and CIoU penalty validation.
@@ -40,10 +45,6 @@ The software suite, **"Анализ Дорог"**, processes video streams from 
 </div>
 
 * **Loss Functions:** CIoU (Complete Intersection over Union) for bounding box regression and Focal Loss for handling class imbalance (especially for D40 Potholes).
-
-<div align="center">
-  <img width="600" alt="Рисунок1" src="https://github.com/user-attachments/assets/0c102cfb-d8a9-4367-8652-4f50af0d88f0" />
-</div>
 
 ## Technology Stack
 * **Computer Vision:** PyTorch, Ultralytics (YOLO11), OpenCV, TensorRT
