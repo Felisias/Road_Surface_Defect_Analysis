@@ -25,7 +25,17 @@ The software suite, **"Анализ Дорог"**, processes video streams from 
 </div>
 
 *  **GIS Integration & Gradient Mapping:** Defects are automatically tied to GPS coordinates. The system calculates a rolling "condition score" within a 25-meter radius and paints the road segments on a map from Green (Good) to Black (Critical).
+
+<div align="center">
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/bac8c4bf-93b6-4f72-8a8c-368c514574df" />
+</div>
+
 *  **Automated PDF Reporting:** Generates comprehensive analytical reports for municipal authorities, highlighting critical zones and defect density.
+
+<div align="center">
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/a3e4e8d3-79b4-4410-b1b4-5ab29159877a" />
+</div>
+
 *  **Human-in-the-loop Annotation:** The custom dataset was meticulously refined using a dual-operator review system and CIoU penalty validation.
 
 ##  Machine Learning Architecture
