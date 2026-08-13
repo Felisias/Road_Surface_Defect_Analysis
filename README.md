@@ -9,12 +9,13 @@
 > The source code, dataset, and trained model weights for this repository are currently **closed-source and hidden**. This restriction is strictly enforced because a **software patent for the algorithms is currently being prepared**, and the project is actively in the submission phase for a grant under the **National Youth Projects of the Russian Federation**. 
 
 ## Project Overview
-This repository showcases the culmination of an undergraduate thesis (ВКР) aimed at automating the detection and mapping of road surface defects using Deep Convolutional Neural Networks [cite: 1, 2]. The system transitions road maintenance from a reactive approach to a **predictive maintenance** strategy, potentially reducing budget expenditures by 15-21% [cite: 1, 2].
+This repository showcases the culmination of an undergraduate thesis (ВКР) aimed at automating the detection and mapping of road surface defects using Deep Convolutional Neural Networks. The system transitions road maintenance from a reactive approach to a **predictive maintenance** strategy, potentially reducing budget expenditures by 15-21%.
 
-The software suite, **"Анализ Дорог"**, processes video streams from car dashcams, detects defects using a highly optimized **YOLO11s** model, and maps them onto an interactive GIS system with a gradient-based road condition score [cite: 1, 2].
+The software suite, **"Анализ Дорог"**, processes video streams from car dashcams, detects defects using a highly optimized **YOLO11s** model, and maps them onto an interactive GIS system with a gradient-based road condition score.
 
-*(Note: Insert a screenshot of the main map interface here. Example from thesis: Рисунок 3 или Рисунок 6)*
-`<!-- ![Map Interface](path/to/your/image.png) -->`
+<img width="1441" height="773" alt="image" src="https://github.com/user-attachments/assets/3def179c-baa8-411e-8d21-deee4358bf4b" />
+<img width="559" height="673" alt="image" src="https://github.com/user-attachments/assets/a92dbf55-1aaf-4ee6-93b9-fcff4f007ce3" />
+
 
 ## Key Features
 *  **High-Precision CV Pipeline:** Real-time defect detection based on the international RDD standard (D00: Longitudinal, D10: Transverse, D20: Alligator, D40: Pothole) [cite: 1, 2].
