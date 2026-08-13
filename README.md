@@ -24,7 +24,7 @@ The software suite, **"Анализ Дорог"**, processes video streams from 
 ##  Machine Learning Architecture
 * **Model:** YOLO11s (selected over YOLOv8 and EfficientDet due to superior latency-accuracy balance).
 * **Dataset:** 20,199 globally sourced images (India, Czech, USA, Japan, Samara) with a carefully balanced 9.1% background image ratio to minimize false positives.
-* <img src="[ССЫЛКА_НА_ТВОЮ_КАРТИНКУ](https://github.com/user-attachments/assets/a5096c6a-f166-4ff5-b813-58bf7aefb71c)" width="500" alt="Описание картинки">
+* <img src="[ССЫЛКА_НА_ТВОЮ_КАРТИНКУ](https://github.com/user-attachments/assets/a5096c6a-f166-4ff5-b813-58bf7aefb71c)" width="150" alt="Описание картинки">
 
 * **Performance:** 
   * `mAP@0.5`: **0.677**
