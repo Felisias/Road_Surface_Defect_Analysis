@@ -34,8 +34,9 @@ The software suite, **"Анализ Дорог"**, processes video streams from 
   * `Inference Time`: **2.5 ms** (400 FPS on NVIDIA T4 via TensorRT)
 * **Loss Functions:** CIoU (Complete Intersection over Union) for bounding box regression and Focal Loss for handling class imbalance (especially for D40 Potholes).
 
-<img width="2200" height="1903" alt="Рисунок1" src="https://github.com/user-attachments/assets/0c102cfb-d8a9-4367-8652-4f50af0d88f0" />
-
+<div align="center">
+  <img width="600" alt="Рисунок1" src="https://github.com/user-attachments/assets/0c102cfb-d8a9-4367-8652-4f50af0d88f0" />
+</div>
 
 ## Technology Stack
 * **Computer Vision:** PyTorch, Ultralytics (YOLO11), OpenCV, TensorRT
