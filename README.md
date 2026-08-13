@@ -16,27 +16,27 @@ The software suite, **"Анализ Дорог"**, processes video streams from 
 <img width="1441" height="773" alt="image" src="https://github.com/user-attachments/assets/3def179c-baa8-411e-8d21-deee4358bf4b" />
 
 ## Key Features
-*  **High-Precision CV Pipeline:** Real-time defect detection based on the international RDD standard (D00: Longitudinal, D10: Transverse, D20: Alligator, D40: Pothole) [cite: 1, 2].
-*  **GIS Integration & Gradient Mapping:** Defects are automatically tied to GPS coordinates. The system calculates a rolling "condition score" within a 25-meter radius and paints the road segments on a map from Green (Good) to Black (Critical) [cite: 1, 2].
-*  **Automated PDF Reporting:** Generates comprehensive analytical reports for municipal authorities, highlighting critical zones and defect density [cite: 1, 2].
-*  **Human-in-the-loop Annotation:** The custom dataset was meticulously refined using a dual-operator review system and CIoU penalty validation [cite: 1, 2].
+*  **High-Precision CV Pipeline:** Defect detection based on the international RDD standard (D00: Longitudinal, D10: Transverse, D20: Alligator, D40: Pothole).
+*  **GIS Integration & Gradient Mapping:** Defects are automatically tied to GPS coordinates. The system calculates a rolling "condition score" within a 25-meter radius and paints the road segments on a map from Green (Good) to Black (Critical).
+*  **Automated PDF Reporting:** Generates comprehensive analytical reports for municipal authorities, highlighting critical zones and defect density.
+*  **Human-in-the-loop Annotation:** The custom dataset was meticulously refined using a dual-operator review system and CIoU penalty validation.
 
 ##  Machine Learning Architecture
-* **Model:** YOLO11s (selected over YOLOv8 and EfficientDet due to superior latency-accuracy balance) [cite: 1, 2].
-* **Dataset:** 20,199 globally sourced images (India, Czech, USA, Japan, Samara) with a carefully balanced 9.1% background image ratio to minimize false positives [cite: 1, 2].
+* **Model:** YOLO11s (selected over YOLOv8 and EfficientDet due to superior latency-accuracy balance).
+* **Dataset:** 20,199 globally sourced images (India, Czech, USA, Japan, Samara) with a carefully balanced 9.1% background image ratio to minimize false positives.
 * **Performance:** 
-  * `mAP@0.5`: **0.677** [cite: 1, 2]
-  * `Inference Time`: **2.5 ms** (400 FPS on NVIDIA T4 via TensorRT) [cite: 1, 2]
-* **Loss Functions:** CIoU (Complete Intersection over Union) for bounding box regression and Focal Loss for handling class imbalance (especially for D40 Potholes) [cite: 1, 2].
+  * `mAP@0.5`: **0.677**
+  * `Inference Time`: **2.5 ms** (400 FPS on NVIDIA T4 via TensorRT)
+* **Loss Functions:** CIoU (Complete Intersection over Union) for bounding box regression and Focal Loss for handling class imbalance (especially for D40 Potholes).
 
-*(Note: Insert a screenshot of the YOLO bounding boxes / detection examples here. Example from thesis: Рисунок 2)*
-`<!-- ![Detections](path/to/your/image.png) -->`
+<img width="2200" height="1903" alt="Рисунок1" src="https://github.com/user-attachments/assets/0c102cfb-d8a9-4367-8652-4f50af0d88f0" />
+
 
 ## Technology Stack
-* **Computer Vision:** PyTorch, Ultralytics (YOLO11), OpenCV, TensorRT [cite: 1, 2]
-* **Frontend:** React 18, TypeScript, Vite, Tailwind CSS [cite: 1, 2]
-* **Mapping Engine:** Leaflet, OpenStreetMap, Overpass API [cite: 1, 2]
-* **Data Processing:** Python, Pandas, NumPy [cite: 1, 2]
+* **Computer Vision:** PyTorch, Ultralytics (YOLO11), OpenCV, TensorRT
+* **Frontend:** React 18, TypeScript, Vite, Tailwind CSS
+* **Mapping Engine:** Leaflet, OpenStreetMap, Overpass API
+* **Data Processing:** Python, Pandas, NumPy
 
 ## Practical Impact & Future Plans
 The project has been successfully presented to the **Youth Minister of Transport of the Samara Region** and received positive evaluations from major logistics operators like "Samara Avtogaz" [cite: 1, 2]. It is designed to be fully integrated into the "Smart City" concept to support the national "Safe Quality Roads" initiative [cite: 1, 2].
