@@ -28,6 +28,7 @@ The software suite, **"Анализ Дорог"**, processes video streams from 
 <div align="center">
   <img width="600" alt="image" src="https://github.com/user-attachments/assets/e0621929-aa81-4522-98f6-77e87eee4279" />
 </div>
+
 * **Performance:** 
   * `mAP@0.5`: **0.677**
   * `Inference Time`: **2.5 ms** (400 FPS on NVIDIA T4 via TensorRT)
