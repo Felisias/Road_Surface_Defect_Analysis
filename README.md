@@ -40,5 +40,3 @@ The software suite, **"Анализ Дорог"**, processes video streams from 
 
 ## Practical Impact & Future Plans
 The project has been successfully presented to the **Youth Minister of Transport of the Samara Region** and received positive evaluations from major logistics operators like "Samara Avtogaz. It is designed to be fully integrated into the "Smart City" concept to support the national "Safe Quality Roads" initiative.
-
----
