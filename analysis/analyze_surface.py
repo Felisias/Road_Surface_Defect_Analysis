@@ -41,11 +41,8 @@ class AnalyzeSurface:
                 print(f"[Модуль анализа] Пропуск: {photo} (не изображение)")
 
     def analyze_defects(self, photo_path, category):
-        """Имитация анализа дефектов на фотографии."""
-        # Имитация: случайно определяем наличие дефектов
         has_defects = random.choice([0, 1])  # 0 - нет, 1 - есть
 
-        # Случайное количество дефектов для каждого типа (если дефекты есть)
         has_large_potholes = random.choice([0, 1]) if has_defects else 0
         large_pothole_count = random.randint(1, 3) if has_large_potholes else 0
 
