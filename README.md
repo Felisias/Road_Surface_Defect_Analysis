@@ -1,110 +1,46 @@
-# Rehaboam Road Surface Analysis Project:
+# 🛣️ Road Surface Defect Analysis (Анализ Дорог)
 
- - **R** oad
+![Patent Pending](https://img.shields.io/badge/Status-Patent_Pending-red.svg)
+![Grant Application](https://img.shields.io/badge/Grant-National_Youth_Projects_RF-blue.svg)
+![YOLO11](https://img.shields.io/badge/Model-YOLO11s-00FFFF.svg)
+![React](https://img.shields.io/badge/Frontend-React_TypeScript-blue.svg)
 
- - **E** valuation and 
+> ⚠️ **IMPORTANT NOTICE:**
+> The source code, dataset, and trained model weights for this repository are currently **closed-source and hidden**. This restriction is strictly enforced because a **software patent for the algorithms is currently being prepared**, and the project is actively in the submission phase for a grant under the **National Youth Projects of the Russian Federation**. 
 
- - **H** ealth
+## 📖 Project Overview
+This repository showcases the culmination of an undergraduate thesis (ВКР) aimed at automating the detection and mapping of road surface defects using Deep Convolutional Neural Networks [cite: 1, 2]. The system transitions road maintenance from a reactive approach to a **predictive maintenance** strategy, potentially reducing budget expenditures by 15-21% [cite: 1, 2].
 
- - **A** ssessment
+The software suite, **"Анализ Дорог"**, processes video streams from car dashcams, detects defects using a highly optimized **YOLO11s** model, and maps them onto an interactive GIS system with a gradient-based road condition score [cite: 1, 2].
 
- - **B** ased
+*(Note: Insert a screenshot of the main map interface here. Example from thesis: Рисунок 3 или Рисунок 6)*
+`<!-- ![Map Interface](path/to/your/image.png) -->`
 
- - **O** n
+## ✨ Key Features
+* 🧠 **High-Precision CV Pipeline:** Real-time defect detection based on the international RDD standard (D00: Longitudinal, D10: Transverse, D20: Alligator, D40: Pothole) [cite: 1, 2].
+* 🗺️ **GIS Integration & Gradient Mapping:** Defects are automatically tied to GPS coordinates. The system calculates a rolling "condition score" within a 25-meter radius and paints the road segments on a map from Green (Good) to Black (Critical) [cite: 1, 2].
+* 📊 **Automated PDF Reporting:** Generates comprehensive analytical reports for municipal authorities, highlighting critical zones and defect density [cite: 1, 2].
+* 🛠 **Human-in-the-loop Annotation:** The custom dataset was meticulously refined using a dual-operator review system and CIoU penalty validation [cite: 1, 2].
 
- - **A** utomated
+## 🧠 Machine Learning Architecture
+* **Model:** YOLO11s (selected over YOLOv8 and EfficientDet due to superior latency-accuracy balance) [cite: 1, 2].
+* **Dataset:** 20,199 globally sourced images (India, Czech, USA, Japan, Samara) with a carefully balanced 9.1% background image ratio to minimize false positives [cite: 1, 2].
+* **Performance:** 
+  * `mAP@0.5`: **0.677** [cite: 1, 2]
+  * `Inference Time`: **2.5 ms** (400 FPS on NVIDIA T4 via TensorRT) [cite: 1, 2]
+* **Loss Functions:** CIoU (Complete Intersection over Union) for bounding box regression and Focal Loss for handling class imbalance (especially for D40 Potholes) [cite: 1, 2].
 
- - **M** odels
+*(Note: Insert a screenshot of the YOLO bounding boxes / detection examples here. Example from thesis: Рисунок 2)*
+`<!-- ![Detections](path/to/your/image.png) -->`
 
-## 1. Описание проекта
-Проект предназначен для автоматического анализа дорожного покрытия и тротуаров с помощью методов машинного обучения. Программа анализирует фотографии дорог и тротуаров, собранные с видеорегистраторов, и извлекает информацию о качестве покрытия, наличии дефектов и типе материала. Итоговые данные используются для построения интерактивной карты с характеристиками дорог и тротуаров, что поможет улучшить навигацию и учитывать качество покрытия при планировании маршрутов.
+## 💻 Technology Stack
+* **Computer Vision:** PyTorch, Ultralytics (YOLO11), OpenCV, TensorRT [cite: 1, 2]
+* **Frontend:** React 18, TypeScript, Vite, Tailwind CSS [cite: 1, 2]
+* **Mapping Engine:** Leaflet, OpenStreetMap, Overpass API [cite: 1, 2]
+* **Data Processing:** Python, Pandas, NumPy [cite: 1, 2]
 
-## 2. Основные функциональные модули
-Проект состоит из нескольких независимых модулей, каждый из которых выполняет свою роль в процессе обработки и анализа изображений:
+## 📈 Practical Impact & Future Plans
+The project has been successfully presented to the **Youth Minister of Transport of the Samara Region** and received positive evaluations from major logistics operators like "Samara Avtogaz" [cite: 1, 2]. It is designed to be fully integrated into the "Smart City" concept to support the national "Safe Quality Roads" initiative [cite: 1, 2].
 
-### 2.1 Модуль 1 — Предварительный отбор изображений
-- **Задача:** Отфильтровать некачественные фотографии (размытые, с пятнами, низким разрешением и т.д.).
-- **Метод:** Нейронная сеть, обученная на датасете с качественными и некачественными изображениями.
-- **Результат:** Папка с фотографиями, прошедшими предварительный отбор.
-
-### 2.2 Модуль 2 — Классификация областей
-- **Задача:** Определение на изображении областей, соответствующих дороге, тротуару или их совместному присутствию.
-- **Метод:** Модель сегментации изображений, выделяющая области дороги и тротуара.
-- **Результат:** Папки с изображениями, отсортированными по категориям: только дорога, только тротуар, совместные изображения.
-
-### 2.3 Модуль 3 — Анализ покрытия
-- **Задача:** Определение типа покрытия (асфальт, плитка, грунт и т.д.) и выявление дефектов (трещины, ямы, неровности).
-- **Метод:** Нейронные сети для анализа текстуры и выявления дефектов на основе обучающего датасета.
-- **Результат:** Конечные данные о характеристиках покрытия и дефектах для каждой фотографии.
-
-### 2.4 Финальный этап — Формирование данных для карты
-- **Задача:** Сохранение итоговой информации о координатах и характеристиках объектов (дорога, тротуар, дефекты) для дальнейшего построения карты.
-- **Результат:** Папка с финальными данными, готовая для использования в построении карты.
-
-## 3. Структура проекта
-project_root/
-- │
-- ├── README.md...........................                  # Описание проекта и документация
-- ├── main.py....................................                    # Главный файл запуска программы
-- ├── config.py..................................                  # Конфигурационные параметры
-- ├── preprocessing/.........................             # Пакет для модуля предобработки
-- │.....   ├── __init__.py..............................            # Инициализация пакета
-- │.....   ├── image_filter.py.................        # Модуль предобработки и фильтрации изображений
-- │.....   └── filter_model.py.................        # Нейросеть для предварительного отбора
-- │
-- ├── classification/...........................            # Пакет для модуля классификации
-- │.....   ├── __init__.py..............................            # Инициализация пакета
-- │.....   ├── road_segmenter.py.........      # Модуль сегментации дорог и тротуаров
-- │.....   └── classify_model.py...........      # Модель классификации областей на фото
-- │
-- ├── analysis/.................................                  # Пакет для модуля анализа покрытия
-- │.....   ├── __init__.py.............................            # Инициализация пакета
-- │.....   ├── surface_analysis.py........    # Модуль анализа покрытия
-- │.....   └── defect_detector.py..........     # Модуль выявления дефектов
-- │
-- ├── data/........................................                      # Папка для хранения данных
-- │.....  ├── raw/.................................                   # Исходные изображения
-- │.....   ├── processed/......................             # Предобработанные изображения
-- │.....   └── final/................................                 # Итоговые данные
-- │
-- ├── models/...................................                    # Папка с обученными моделями
-- │.....   ├── filter_model.h5................        # Модель для предобработки
-- │.....   ├── segmenter_model.h5......     # Модель для сегментации
-- │.....   └── defect_model.h5.............        # Модель для выявления дефектов
-- │
-- └── utils/.........................................                     # Вспомогательные модули
--  .......  ├── logger.py..........................              # Модуль логирования
--  .......  └── visualization.py................       # Модуль визуализации результатов
-
-
-## 4. Установка и запуск проекта
-Для запуска проекта необходимо установить все зависимости и настроить окружение.
-
-### 4.1 Установка зависимостей
-Создайте виртуальное окружение и установите все необходимые библиотеки:
-```bash
-# Создать виртуальное окружение (если используется venv)
-python -m venv env
-
-# Активировать виртуальное окружение
-source env/bin/activate      # Для Linux и MacOS
-env\Scripts\activate         # Для Windows
-
-# Установить зависимости из файла requirements.txt
-pip install -r requirements.txt
-```
-### 4.2 Запуск программы
-После установки зависимостей можно запустить основной файл программы:
-```bash
-python main.py
-```
-
-## 5. Планы на развитие
-- **Этап 1:** Разработка и интеграция базовых модулей предобработки и классификации.
-- **Этап 2:** Обучение нейронных сетей на специально подготовленных датасетах.
-- **Этап 3:** Реализация модуля анализа покрытия и выявления дефектов.
-- **Этап 4:** Интеграция данных в систему построения карт.
-- **Этап 5:** Оптимизация производительности и улучшение алгоритмов для сегментации и анализа.
-
-## 6. Дальнейшая информация
-Для получения подробной информации о каждом модуле и его функциях, ознакомьтесь с документацией внутри соответствующих модулей..
+---
+*Designed and developed by Nikita Kutsyba.*
