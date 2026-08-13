@@ -26,8 +26,7 @@ def preprocess_images():
         photo_path = os.path.join(raw_dir, photo)
         if photo.endswith(('.jpg', '.jpeg', '.png')):  # Проверка на допустимые форматы
             total_photos += 1
-            # Имитация фильтрации: случайно отклоняем 20% фотографий
-            if random.random() < 0.2:  # 20% отклоняем
+            if random.random() < 0.2:
                 shutil.copy(photo_path, os.path.join(rejected_dir, photo))
                 rejected_count += 1
             else:
