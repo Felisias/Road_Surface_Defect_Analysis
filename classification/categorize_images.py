@@ -29,7 +29,6 @@ def categorize_images():
         if os.path.isfile(photo_path) and photo.endswith(('.jpg', '.jpeg', '.png')):  # Проверка на допустимые форматы
             total_photos += 1
 
-            # Имитация классификации: случайное распределение по категориям
             category = random.choice(['road_only', 'sidewalk_only', 'road_and_sidewalk'])
 
             if category == 'road_only':
