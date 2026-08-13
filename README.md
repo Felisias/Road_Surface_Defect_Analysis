@@ -14,8 +14,6 @@ This repository showcases the culmination of an undergraduate thesis (ВКР) ai
 The software suite, **"Анализ Дорог"**, processes video streams from car dashcams, detects defects using a highly optimized **YOLO11s** model, and maps them onto an interactive GIS system with a gradient-based road condition score.
 
 <img width="1441" height="773" alt="image" src="https://github.com/user-attachments/assets/3def179c-baa8-411e-8d21-deee4358bf4b" />
-<img width="559" height="673" alt="image" src="https://github.com/user-attachments/assets/a92dbf55-1aaf-4ee6-93b9-fcff4f007ce3" />
-
 
 ## Key Features
 *  **High-Precision CV Pipeline:** Real-time defect detection based on the international RDD standard (D00: Longitudinal, D10: Transverse, D20: Alligator, D40: Pothole) [cite: 1, 2].
