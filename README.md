@@ -21,11 +21,11 @@ The software suite, **"Анализ Дорог"**, processes video streams from 
 *  **Automated PDF Reporting:** Generates comprehensive analytical reports for municipal authorities, highlighting critical zones and defect density.
 *  **Human-in-the-loop Annotation:** The custom dataset was meticulously refined using a dual-operator review system and CIoU penalty validation.
 
-<img width="1156" height="793" alt="image" src="https://github.com/user-attachments/assets/b856470f-b96f-4214-a2e5-b1b408fb5488" />
-
 ##  Machine Learning Architecture
 * **Model:** YOLO11s (selected over YOLOv8 and EfficientDet due to superior latency-accuracy balance).
 * **Dataset:** 20,199 globally sourced images (India, Czech, USA, Japan, Samara) with a carefully balanced 9.1% background image ratio to minimize false positives.
+* <img width="1156" height="793" alt="image" src="https://github.com/user-attachments/assets/a5096c6a-f166-4ff5-b813-58bf7aefb71c" />
+
 * **Performance:** 
   * `mAP@0.5`: **0.677**
   * `Inference Time`: **2.5 ms** (400 FPS on NVIDIA T4 via TensorRT)
